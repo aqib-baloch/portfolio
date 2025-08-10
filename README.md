@@ -9,7 +9,6 @@ A modern, responsive personal portfolio website built with **Next.js** and **Tai
 
 ##  Live Demo
 [View Portfolio](https://portfolio-aqib-hussain.vercel.app/)  
-*(Replace with your actual deployed link)*
 
 ---
 
