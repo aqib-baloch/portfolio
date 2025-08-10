@@ -7,13 +7,13 @@ A modern, responsive personal portfolio website built with **Next.js** and **Tai
 
 ---
 
-## 🚀 Live Demo
+##  Live Demo
 [View Portfolio](https://your-portfolio-live-link.com)  
 *(Replace with your actual deployed link)*
 
 ---
 
-## 📌 Features
+##  Features
 - Responsive design for all devices
 - Modern UI/UX with Tailwind CSS
 - Showcases projects, skills, and experience
@@ -22,7 +22,7 @@ A modern, responsive personal portfolio website built with **Next.js** and **Tai
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 - **Frontend:** Next.js, TypeScript, Tailwind CSS, DaisyUI
 - **Animations:** Framer Motion
 - **Icons:** React Icons
