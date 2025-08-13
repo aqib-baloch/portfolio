@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Building, Calendar, MapPin } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Building, Calendar, MapPin } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
@@ -11,25 +11,27 @@ const Experience = () => {
       period: "11/2024 - Present",
       type: "Full-time",
       description: [
-        "Integrated FastAPI for seamless backend communication, enhancing RESTful API functionality",
-        "Optimized frontend performance using Next.js & TypeScript, focusing on scalable UI/UX development",
-        "Ensured effective API integration and backend connectivity",
-        "Conducted performance optimization in Next.js, improving overall application responsiveness",
+        "As a Software Engineer, I am also responsible for SQA (Software Quality Assurance) tasks, ensuring both development and quality standards are met.",
+        "Integrated FastAPI for seamless backend communication, enhancing RESTful API functionality.",
+        "Optimized frontend performance using Next.js & TypeScript, focusing on scalable UI/UX development.",
+        "Ensured effective API integration and backend connectivity.",
+        "Conducted performance optimization in Next.js, improving overall application responsiveness.",
+        "Designed and executed test cases for web applications, enhancing software reliability.",
+        "Performed manual and automated testing, including API testing with Postman and UI testing using Selenium.",
+        "Managed bug tracking and defect resolution to ensure quality assurance.",
       ],
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "DaisyUI", "FastAPI"],
-    },
-    {
-      title: "Jr. SQA Engineer",
-      company: "psychiatrai",
-      location: "Remote",
-      period: "11/2024 - Present",
-      type: "Full-time",
-      description: [
-        "Designed and executed test cases for web applications, enhancing software reliability",
-        "Performed manual and automated testing, including API testing with Postman and UI testing using Selenium",
-        "Managed bug tracking and defect resolution to ensure quality assurance",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "DaisyUI",
+        "FastAPI",
+        "Selenium",
+        "Postman",
+        "JIRA",
+        "Manual Testing",
+        "API Testing",
       ],
-      technologies: ["Selenium", "Postman", "JIRA", "Manual Testing", "API Testing"],
     },
     {
       title: "Software Developer Intern",
@@ -43,27 +45,44 @@ const Experience = () => {
         "Executed API testing using Postman and validated responses",
         "Collaborated with developers to identify and resolve defects",
       ],
-      technologies: ["React.js", "Nest.js", "PostgreSQL", "Postman", "API Testing"],
+      technologies: [
+        "React.js",
+        "Nest.js",
+        "PostgreSQL",
+        "Postman",
+        "API Testing",
+      ],
     },
-  ]
+  ];
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/50">
+    <section
+      id="experience"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/50"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">Work Experience</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            Work Experience
+          </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            My professional journey in software development and quality assurance
+            My professional journey in software development and quality
+            assurance
           </p>
         </div>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+            <Card
+              key={index}
+              className="hover:shadow-lg transition-shadow duration-300"
+            >
               <CardHeader>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div>
-                    <CardTitle className="text-xl text-slate-900 dark:text-white mb-2">{exp.title}</CardTitle>
+                    <CardTitle className="text-xl text-slate-900 dark:text-white mb-2">
+                      {exp.title}
+                    </CardTitle>
                     <div className="flex items-center gap-4 text-slate-600 dark:text-slate-300">
                       <div className="flex items-center gap-2">
                         <Building className="h-4 w-4" />
@@ -87,8 +106,11 @@ const Experience = () => {
               <CardContent>
                 <ul className="space-y-2 mb-6">
                   {exp.description.map((item, idx) => (
-                    <li key={idx} className="text-slate-600 dark:text-slate-300 flex items-start gap-2">
-                      <span className="text-blue-600 mt-2">•</span>
+                    <li
+                      key={idx}
+                      className="text-slate-600 dark:text-slate-300 flex items-start gap-2"
+                    >
+                      <span className="text-slate-600 font-bold ">{">"}</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -106,7 +128,7 @@ const Experience = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

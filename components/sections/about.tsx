@@ -1,30 +1,35 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, MapPin, Phone, Mail } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { GraduationCap, MapPin, Phone, Mail } from "lucide-react";
 
 const About = () => {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">About Me</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            About Me
+          </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Passionate about creating innovative solutions and ensuring software quality
+            Passionate about creating innovative solutions and ensuring software
+            quality
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* About Text */}
           <div>
-            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">Professional Summary</h3>
-            <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-              Computer Science graduate with 1 year of full-stack experience. Skilled in building RESTful APIs (FastAPI,
-              Express, Node.js, Nest.js) and integrating them with modern frontends (Next.js, React.js, Vue.js).
-              Proficient with TanStack Query, React Hooks, Redux, and Zod.
+            <p className="text-slate-600 text-justify dark:text-slate-300 mb-6 leading-relaxed">
+              Computer Science graduate with 1 year of full-stack experience.
+              Skilled in building RESTful APIs (FastAPI, Express, Node.js,
+              Nest.js) and integrating them with modern frontends (Next.js,
+              React.js, Vue.js). Proficient with TanStack Query, React Hooks,
+              Redux, and Zod.
             </p>
-            <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-              Collaborative and adaptable, with experience delivering real-world solutions in agile and supportive team
-              environments. Strong focus on software quality assurance, testing methodologies, and performance
-              optimization.
+            <p className="text-slate-600 text-justify dark:text-slate-300 mb-6 leading-relaxed">
+              Collaborative and adaptable, with experience delivering real-world
+              solutions in agile and supportive team environments. Strong focus
+              on software quality assurance, testing methodologies, and
+              performance optimization.
             </p>
 
             {/* Contact Info */}
@@ -53,13 +58,18 @@ const About = () => {
                     <GraduationCap className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white">Education</h4>
-                    <p className="text-slate-600 dark:text-slate-300">Bachelor of Science in Computer Science</p>
+                    <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
+                      Education
+                    </h4>
+                    <p className="text-slate-600 dark:text-slate-300">
+                      Bachelor of Science in Computer Science
+                    </p>
                   </div>
                 </div>
                 <div className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
                   <p>
-                    <strong>University:</strong> Comsats University Islamabad, Wah Cantt
+                    <strong>University:</strong> Comsats University Islamabad,
+                    Wah Cantt
                   </p>
                   <p>
                     <strong>Graduation:</strong> 2024
@@ -72,14 +82,22 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4">
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">1+</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-300">Years Experience</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">
+                    1+
+                  </div>
+                  <div className="text-sm text-slate-600 dark:text-slate-300">
+                    Years Experience
+                  </div>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">5+</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-300">Projects Completed</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-2">
+                    5+
+                  </div>
+                  <div className="text-sm text-slate-600 dark:text-slate-300">
+                    Projects Completed
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -87,7 +105,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

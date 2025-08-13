@@ -25,13 +25,21 @@ const Contact = () => {
     message: "",
   });
   const [open, setOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+    setIsSubmitting(true);
+
+    // Simulate form submission delay
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Show success dialog
     setOpen(true);
-    // Optionally reset form
+
+    // Reset form
     setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
   };
 
   const handleChange = (
@@ -80,6 +88,7 @@ const Contact = () => {
           </div>
         </DialogContent>
       </Dialog>
+
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -188,9 +197,9 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <Card>
+            <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900">
               <CardHeader>
-                <CardTitle className="text-slate-900 dark:text-white">
+                <CardTitle className="text-slate-900 dark:text-white text-xl">
                   Send a Message
                 </CardTitle>
               </CardHeader>
@@ -212,6 +221,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Your name"
+                        className="border-blue-200 dark:border-blue-900 focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
                     <div>
@@ -229,6 +239,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="your.email@example.com"
+                        className="border-blue-200 dark:border-blue-900 focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
                   </div>
@@ -247,7 +258,8 @@ const Contact = () => {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="kindly provide a subject"
+                      placeholder="Kindly provide a subject"
+                      className="border-blue-200 dark:border-blue-900 focus:ring-blue-500 focus:border-blue-500"
                     />
                   </div>
 
@@ -266,15 +278,17 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Please write your message..."
+                      className="border-blue-200 dark:border-blue-900 focus:ring-blue-500 focus:border-blue-500"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200"
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
