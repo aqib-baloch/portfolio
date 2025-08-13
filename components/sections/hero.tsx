@@ -24,17 +24,10 @@ const Hero = () => {
           <div className="text-center lg:text-left">
             <div className="mb-6">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-4">
-                Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Aqib Hussain
+                 Summary
                 </span>
               </h1>
-              <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 mb-2">
-                Software Engineer & QA Specialist
-              </p>
-              <p className="text-lg text-slate-500 dark:text-slate-400">
-                Based in Sargodha, Pakistan
-              </p>
             </div>
 
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl">

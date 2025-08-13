@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Aqib Hussain</h3>
             <p className="text-slate-300 mb-4">
-              Software Engineer & QA Specialist passionate about creating innovative solutions and ensuring software
+              Software & QA Engineer  passionate about creating innovative solutions and ensuring software
               quality.
             </p>
             <div className="flex gap-4">
