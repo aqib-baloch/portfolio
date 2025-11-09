@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 const DEFAULT_TO_EMAIL = "hafizaqibbaloch@gmail.com";
 
 export async function POST(request: Request) {
@@ -16,7 +14,8 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!process.env.RESEND_API_KEY) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
       return NextResponse.json(
         { error: "RESEND_API_KEY is not configured on the server." },
         { status: 500 }
@@ -30,6 +29,8 @@ export async function POST(request: Request) {
       .split(",")
       .map((addr) => addr.trim())
       .filter(Boolean);
+
+    const resend = new Resend(apiKey);
 
     await resend.emails.send({
       from,
