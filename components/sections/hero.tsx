@@ -22,14 +22,6 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left">
-            <div className="mb-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-4">
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                 Summary
-                </span>
-              </h1>
-            </div>
-
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl">
               Computer Science graduate with expertise in full-stack development
               and software quality assurance. Passionate about building scalable
@@ -44,7 +36,7 @@ const Hero = () => {
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
               >
                 <Link
-                  href="/Aqib%20Hussain%20v7.pdf"
+                  href="/AqibHussainResume%20(2).pdf"
                   download
                   target="_blank"
                   rel="noopener noreferrer"
