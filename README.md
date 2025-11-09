@@ -18,6 +18,7 @@ A modern, responsive personal portfolio website built with **Next.js** and **Tai
 - Showcases projects, skills, and experience
 - Optimized for performance and SEO
 - Smooth navigation and animations
+- Contact form triggers an on-site confirmation dialog (no backend email)
 
 ---
 
@@ -28,4 +29,3 @@ A modern, responsive personal portfolio website built with **Next.js** and **Tai
 - **Deployment:** Vercel
 
 ---
-

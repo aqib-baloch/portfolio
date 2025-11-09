@@ -65,7 +65,6 @@ const Contact = () => {
     message: "",
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
-  const [submitError, setSubmitError] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -95,34 +94,12 @@ const Contact = () => {
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setSubmitError(null);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        const data = await response.json().catch(() => null);
-        throw new Error(data?.error ?? "Unable to send your message.");
-      }
-
-      setShowConfetti(true);
-      setOpen(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setShowConfetti(false), 5000);
-    } catch (error) {
-      console.error(error);
-      setSubmitError(
-        error instanceof Error
-          ? error.message
-          : "Something went wrong. Please try again."
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+    setShowConfetti(true);
+    setOpen(true);
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setTimeout(() => setShowConfetti(false), 5000);
+    setIsSubmitting(false);
   };
 
   const handleChange = (
@@ -130,7 +107,6 @@ const Contact = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if (submitError) setSubmitError(null);
     if (errors[name as keyof FormData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -455,11 +431,6 @@ const Contact = () => {
                         </>
                       )}
                     </Button>
-                    {submitError && (
-                      <p className="text-sm text-red-500 text-center">
-                        {submitError}
-                      </p>
-                    )}
                   </form>
                 </CardContent>
               </Card>

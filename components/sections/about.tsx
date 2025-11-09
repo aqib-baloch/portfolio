@@ -224,14 +224,6 @@ const About = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Timeline Dot */}
-                <div className="flex items-center mt-4">
-                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-md" />
-                  <div className="ml-2 text-sm text-slate-500 dark:text-slate-400">
-                    Full-time • 4 Years
-                  </div>
-                </div>
               </CardContent>
             </Card>
 
