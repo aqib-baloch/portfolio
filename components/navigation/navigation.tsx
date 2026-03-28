@@ -80,7 +80,7 @@ const Navigation = () => {
                 Aqib Hussain
               </div>
               <div className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                Software & QA Engineer
+                Software Engineer
               </div>
             </div>
           </div>

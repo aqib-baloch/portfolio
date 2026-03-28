@@ -2,238 +2,192 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Building, Calendar, MapPin } from "lucide-react";
+import { Building, Calendar, MapPin, Sparkles, CheckCircle2, ChevronRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
 const Experience = () => {
   const experiences = [
     {
       title: "Software Engineer",
-      company: "psychiatrai",
-      location: "Islamabad",
-      period: "11/2024 - Present",
+      company: "Psychiatrai",
+      location: "Islamabad, Pakistan",
+      period: "Nov 2024 – Present",
       type: "Full-time",
       isCurrent: true,
+      roles: [
+        { title: "Software Engineer", duration: "March 2025 – Present" },
+        { title: "Associate Software Engineer", duration: "Nov 2024 – March 2025" }
+      ],
       description: [
-        "As a Software Engineer, I am also responsible for SQA (Software Quality Assurance) tasks, ensuring both development and quality standards are met.",
-        "Integrated FastAPI for seamless backend communication, enhancing RESTful API functionality.",
-        "Optimized frontend performance using Next.js & TypeScript, focusing on scalable UI/UX development.",
-        "Ensured effective API integration and backend connectivity.",
-        "Conducted performance optimization in Next.js, improving overall application responsiveness.",
-        "Designed and executed test cases for web applications, enhancing software reliability.",
-        "Performed manual and automated testing, including API testing with Postman and UI testing using Selenium.",
-        "Managed bug tracking and defect resolution to ensure quality assurance.",
+        "Spearheading end-to-end feature delivery, translating complex requirements into high-impact systems through strategic research and implementation planning.",
+        "Architecting high-concurrency backend services with FastAPI, delivering robust RESTful APIs that serve as the foundation for platform reliability.",
+        "Championing full-stack innovation by engineering unified, seamless user experiences across Next.js and React Native platforms.",
+        "Advancing system performance through TypeScript-driven Next.js optimizations, resulting in superior responsiveness and scalability.",
+        "Orchestrating secure and efficient data flows by leading the integration of critical frontend and backend service layers.",
+        "Streamlining the software delivery lifecycle by designing sophisticated CI/CD pipelines via GitHub Actions, ensuring flawless automated deployments.",
+        "Directing mission-critical release cycles for web and backend environments to ensure high-availability and operational stability.",
+        "Fostering technical excellence by conducting deep-dive code reviews and enforcing clean architecture best practices.",
+        "Managed original transition from Associate to Software Engineer, contributing to the growth of a digital wellbeing ecosystem."
       ],
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "DaisyUI",
-        "FastAPI",
-        "Selenium",
-        "Postman",
-        "JIRA",
-        "Manual Testing",
-        "API Testing",
-      ],
+      technologies: ["FastAPI", "Next.js", "React Native", "TypeScript", "GitHub Actions", "Full-Stack Dev", "System Design"],
     },
     {
-      title: "Software Developer Intern",
+      title: "Software Engineer Intern",
       company: "Amperor Tech",
-      location: "Lahore, Punjab",
-      period: "08/2024 - 10/2024",
+      location: "Lahore, Pakistan",
+      period: "Aug 2024 – Oct 2024",
       type: "Internship",
       isCurrent: false,
       description: [
-        "Engaged in API testing and documentation, enhancing RESTful API skills",
-        "Participated in collaborative development, strengthening teamwork and problem-solving abilities",
-        "Executed API testing using Postman and validated responses",
-        "Collaborated with developers to identify and resolve defects",
+        "Assisted in development of full-stack web applications in a product and service-based environment.",
+        "Worked with React.js, NestJS, and PostgreSQL to support feature development and backend integration.",
+        "Collaborated with cross-functional teams to identify and resolve defects, ensuring robust software delivery."
       ],
-      technologies: [
-        "React.js",
-        "Nest.js",
-        "PostgreSQL",
-        "Postman",
-        "API Testing",
-      ],
+      technologies: ["React.js", "NestJS", "PostgreSQL", "API Testing", "Full-Stack"],
     },
   ];
 
-  // Properly typed variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const itemVariants: Variants = {
-    hidden: { x: -40, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-      },
-    },
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
   };
 
   return (
     <section
       id="experience"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/20"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 mb-4">
-            Professional Experience
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            My journey building scalable applications and ensuring quality
-            through development and testing
-          </p>
-        </motion.div>
+        {/* Section Header */}
+        <div className="text-center mb-16 px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold uppercase tracking-widest mb-4"
+          >
+            <Sparkles className="h-3 w-3" /> Career Path
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-6"
+          >
+            Professional Journey
+          </motion.h2>
+          <div className="h-1.5 w-24 bg-blue-600 dark:bg-blue-500 mx-auto rounded-full" />
+        </div>
 
-        {/* Timeline */}
+        {/* Timeline Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="relative"
+          className="space-y-12"
         >
-          {/* Vertical Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 opacity-30 hidden md:block" />
-
           {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="relative flex gap-6 mb-10 last:mb-0"
-            >
-              {/* Timeline Dot - Fixed: removed conflicting 'flex' */}
-              <div className="flex-shrink-0 w-16 h-16 relative items-center justify-center z-10 hidden md:flex">
-                <div
-                  className={`w-4 h-4 rounded-full border-4 ${
-                    exp.isCurrent
-                      ? "bg-gradient-to-r from-blue-500 to-purple-500 border-white shadow-lg shadow-purple-500/30"
-                      : "bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600"
-                  }`}
-                />
+            <motion.div key={index} variants={itemVariants}>
+              <Card className={`relative overflow-hidden border-0 shadow-xl ${exp.isCurrent ? 'bg-white dark:bg-slate-900' : 'bg-slate-50/50 dark:bg-slate-800/20'}`}>
+                {/* Visual Accent for Current Role */}
                 {exp.isCurrent && (
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 blur-xl opacity-30 animate-pulse" />
+                  <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-600 to-purple-600" />
                 )}
-              </div>
-
-              {/* Card */}
-              <Card
-                className={`flex-1 group relative overflow-hidden border ${
-                  exp.isCurrent
-                    ? "border-blue-200 dark:border-blue-900/50 shadow-xl"
-                    : "border-slate-200 dark:border-slate-700"
-                } hover:shadow-2xl hover:-translate-y-1 transition-all duration-300`}
-              >
-                {/* Gradient Top Border for Current Role */}
-                {exp.isCurrent && (
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
-                )}
-
-                <CardHeader className="pb-4">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div>
-                      <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                        {exp.title}
+                
+                <CardHeader className="p-8 pb-4">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <CardTitle className="text-2xl font-bold dark:text-white">
+                          {exp.title}
+                        </CardTitle>
                         {exp.isCurrent && (
-                          <Badge className="ml-2 text-xs bg-gradient-to-r from-emerald-500 to-teal-600 text-white border-none">
-                            Current
+                          <Badge className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 border-none font-bold text-[10px] uppercase">
+                            Current Role
                           </Badge>
                         )}
-                      </CardTitle>
-
-                      <div className="flex flex-wrap items-center gap-4 mt-2 text-slate-600 dark:text-slate-300">
-                        <div className="flex items-center gap-1.5">
-                          <Building className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                          <span className="font-medium">{exp.company}</span>
+                      </div>
+                      
+                      {/* Secondary Roles Indicator for Consolidated Psychiatrai Entry */}
+                      {exp.roles && (
+                        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4">
+                          {exp.roles.map((role, i) => (
+                            <div key={i} className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+                               <ChevronRight className="h-3 w-3 text-blue-500" />
+                               <span className="font-semibold">{role.title}</span> • <span>{role.duration}</span>
+                            </div>
+                          ))}
                         </div>
-                        <div className="flex items-center gap-1.5">
-                          <MapPin className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                      )}
+
+                      <div className="flex flex-wrap items-center gap-6 text-sm text-slate-600 dark:text-slate-400">
+                        <div className="flex items-center gap-2">
+                          <Building className="h-4 w-4 text-blue-500" />
+                          <span className="font-bold text-slate-800 dark:text-slate-200 uppercase tracking-tight">{exp.company}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="h-4 w-4 text-purple-500" />
                           <span>{exp.location}</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col items-start lg:items-end gap-2">
-                      <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300">
-                        <Calendar className="h-4 w-4" />
-                        <span className="text-sm">{exp.period}</span>
+                    <div className="flex flex-col items-start md:items-end gap-3">
+                      <div className="flex items-center gap-2 px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300 font-bold text-xs">
+                        <Calendar className="h-3 w-3" /> {exp.period}
                       </div>
-                      <Badge
-                        variant={
-                          exp.type === "Full-time" ? "default" : "secondary"
-                        }
-                        className={
-                          exp.type === "Full-time"
-                            ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300"
-                            : ""
-                        }
-                      >
+                      <Badge variant="outline" className="border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400 uppercase text-[10px] tracking-widest font-bold">
                         {exp.type}
                       </Badge>
                     </div>
                   </div>
                 </CardHeader>
 
-                <CardContent>
-                  <ul className="space-y-2.5 mb-6">
-                    {exp.description.map((item, idx) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.05 }}
-                        className="text-slate-600 dark:text-slate-300 flex items-start gap-2 text-sm leading-relaxed"
-                      >
-                        <span className="text-blue-600 dark:text-blue-400 font-bold mt-0.5">
-                          ›
-                        </span>
-                        <span>{item}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
+                <CardContent className="p-8 pt-0">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    {/* Responsibilities Column */}
+                    <div className="lg:col-span-8">
+                       <ul className="space-y-4">
+                        {exp.description.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-4 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                            <CheckCircle2 className="h-5 w-5 text-blue-500/50 mt-0.5 flex-shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech, idx) => (
-                      <motion.div
-                        key={idx}
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Badge
-                          variant="outline"
-                          className={`text-xs font-medium px-3 py-1 border ${
-                            exp.isCurrent
-                              ? "border-blue-300 dark:border-blue-700 bg-blue-50/50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300"
-                              : "border-slate-300 dark:border-slate-600"
-                          } hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-slate-800 dark:hover:to-slate-700 transition-all duration-200 cursor-default`}
-                        >
-                          {tech}
-                        </Badge>
-                      </motion.div>
-                    ))}
+                    {/* Meta/Tech Column */}
+                    <div className="lg:col-span-4 space-y-6">
+                      <div className="p-6 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-800">
+                        <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-4">Core Tech Focus</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.technologies.map((tech, i) => (
+                            <Badge 
+                              key={i} 
+                              variant="secondary" 
+                              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-[11px] font-bold px-3 py-1 group-hover:border-blue-500 transition-all"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {exp.isCurrent && (
+                        <div className="px-6 py-4 bg-blue-600 dark:bg-blue-500 rounded-2xl text-white shadow-lg shadow-blue-500/20">
+                          <p className="text-[10px] uppercase font-black tracking-widest mb-1 opacity-70">Focus Areas</p>
+                          <p className="font-bold text-sm leading-tight italic">Leading end-to-end full-stack feature delivery through modern tech stacks.</p>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
